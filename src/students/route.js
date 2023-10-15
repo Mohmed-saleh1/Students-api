@@ -1,8 +1,10 @@
 const {Router} = require('express')
 const router = Router()
+const { getAllStudents,getStudentById ,addStudent} = require('./controller')
 
-router.get('/',(req,res) => {
-  res.send('hello from students route')
-})
+router.get('/',getAllStudents)
+router.post('/',addStudent)
+router.get('/:id',getStudentById)
+
 
 module.exports = router 

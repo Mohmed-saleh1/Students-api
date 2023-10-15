@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const studentsRouter = require('./src/students/route')
 
-
+app.use(express.json())
 app.get('/',(req,res) => {
     res.send("Hello , world")
 })

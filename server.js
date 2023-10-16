@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express();
-const port = 3000;
 const studentsRouter = require('./src/students/route')
+require('dotenv').config()
+
 
 app.use(express.json())
 app.get('/',(req,res) => {
@@ -9,7 +10,8 @@ app.get('/',(req,res) => {
 })
 
 app.use('/api/v1/students',studentsRouter)
-
+ 
+const port = process.env.PORT;
 app.listen(port,()=>{
     console.log(`server is listen to port ${port}`);
 })

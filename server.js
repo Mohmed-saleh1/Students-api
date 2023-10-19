@@ -6,7 +6,7 @@ require('dotenv').config()
 
 app.use(express.json())
 app.get('/',(req,res) => {
-    res.send("Hello , world")
+    res.send("Hello ,  world")
 })
 
 app.use('/api/v1/students',studentsRouter)
